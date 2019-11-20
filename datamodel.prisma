@@ -1,0 +1,13 @@
+type User {
+	id: ID! @id
+	name: String!
+	email: String! @unique
+	posts: [Post!]!
+}
+
+type Post {
+	id: ID! @id
+	title: String @unique
+	published: Boolean! @default(value: false)
+	author: User
+}
